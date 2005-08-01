@@ -27,6 +27,6 @@ xsetroot_LDADD = $(XSETROOT_LIBS)
 xsetroot_SOURCES =	\
         xsetroot.c
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xsetroot.man
 
