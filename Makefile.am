@@ -21,7 +21,7 @@
 
 bin_PROGRAMS = xsetroot
 
-xsetroot_CFLAGS = $(XSETROOT_CFLAGS)
+AM_CFLAGS = $(XSETROOT_CFLAGS)
 xsetroot_LDADD = $(XSETROOT_LIBS)
 
 xsetroot_SOURCES =	\
