@@ -17,4 +17,10 @@ iceauth.1
 install-sh
 missing
 stamp-h1
+xsetroot
+xsetroot.1
 *~
+*.o
+xsetroot-*.tar.*
+ChangeLog
+tags
