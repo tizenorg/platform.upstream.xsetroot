@@ -36,6 +36,7 @@ in this Software without prior written authorization from The Open Group.
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
 #include <X11/Xmu/CurUtil.h>
+#include <X11/Xcursor/Xcursor.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -79,6 +80,7 @@ usage(void)
     fprintf(stderr, "  -name <string>\n");
     fprintf(stderr, "  -cursor <cursor file> <mask file>\n");
     fprintf(stderr, "  -cursor_name <cursor-font name>\n");
+    fprintf(stderr, "  -xcf <ARGB cursor file> <cursor size>\n");
     fprintf(stderr, "  -solid <color>\n");
     fprintf(stderr, "  -gray   or   -grey\n");
     fprintf(stderr, "  -bitmap <filename>\n");
@@ -100,6 +102,8 @@ main(int argc, char *argv[])
     char *cursor_mask = NULL;
     char *cursor_name = NULL;
     char *solid_color = NULL;
+    char *xcf = NULL;
+    int xcf_size = 32;
     Cursor cursor;
     int gray = 0;
     char *bitmap_file = NULL;
@@ -141,6 +145,16 @@ main(int argc, char *argv[])
 	if (!strcmp("-cursor_name", argv[i])) {
 	    if (++i>=argc) usage();
 	    cursor_name = argv[i];
+	    nonexcl++;
+	    continue;
+	}
+	if (!strcmp("-xcf", argv[i])) {
+	    if (++i>=argc) usage();
+	    xcf = argv[i];
+	    if (++i>=argc) usage();
+	    xcf_size = atoi(argv[i]);
+	    if (xcf_size <= 0)
+		xcf_size = 32;
 	    nonexcl++;
 	    continue;
 	}
@@ -221,6 +235,19 @@ main(int argc, char *argv[])
 	{
 	    XDefineCursor (dpy, root, cursor);
 	    XFreeCursor (dpy, cursor);
+	}
+    }
+    if (xcf) {
+	XcursorImages *images = XcursorFilenameLoadImages(xcf, xcf_size);
+	if (!images) {
+	    fprintf(stderr, "Invalid cursor file \"%s\"\n", xcf);
+	} else {
+	    cursor = XcursorImagesLoadCursor(dpy, images);
+	    if (cursor)
+	    {
+		XDefineCursor (dpy, root, cursor);
+		XFreeCursor (dpy, cursor);
+	    }
 	}
     }
     /* Handle -gray and -grey options */
