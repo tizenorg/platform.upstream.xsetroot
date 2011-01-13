@@ -1,14 +1,14 @@
 .\" Copyright 1988, 1998  The Open Group
-.\" 
+.\"
 .\" Permission to use, copy, modify, distribute, and sell this software and its
 .\" documentation for any purpose is hereby granted without fee, provided that
 .\" the above copyright notice appear in all copies and that both that
 .\" copyright notice and this permission notice appear in supporting
 .\" documentation.
-.\" 
+.\"
 .\" The above copyright notice and this permission notice shall be included
 .\" in all copies or substantial portions of the Software.
-.\" 
+.\"
 .\" THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 .\" OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 .\" MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -16,7 +16,7 @@
 .\" OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 .\" ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 .\" OTHER DEALINGS IN THE SOFTWARE.
-.\" 
+.\"
 .\" Except as contained in this notice, the name of The Open Group shall
 .\" not be used in advertising or otherwise to promote the sale, use or
 .\" other dealings in this Software without prior written authorization
@@ -35,7 +35,7 @@ xsetroot \- root window parameter setting utility for X
 [-mod \fIx y\fP] [-gray] [-grey] [-fg \fIcolor\fP] [-bg \fIcolor\fP] [-rv]
 [-solid \fIcolor\fP] [-name \fIstring\fP]
 .SH DESCRIPTION
-The 
+The
 .I xsetroot
 program
 allows you to tailor the appearance of the background ("root")
@@ -51,7 +51,7 @@ is specified, the window is reset to its default state.  The
 option can be specified along with other options and only the non-specified
 characteristics will be reset to the default state.
 .PP
-Only one of the background color/tiling changing options 
+Only one of the background color/tiling changing options
 (-solid, -gray, -grey, -bitmap, and -mod) may be specified at a time.
 .SH OPTIONS
 .PP
@@ -93,7 +93,7 @@ Make the entire background grey.
 Use ``color'' as the foreground color.  Foreground and background colors
 are meaningful only in combination with -cursor, -bitmap, or -mod.
 .IP "\fB-bg\fP \fIcolor\fP"
-Use ``color'' as the background color.  
+Use ``color'' as the background color.
 .IP \fB-rv\fP
 This exchanges the foreground and background colors.  Normally the foreground
 color is black and the background color is white.
