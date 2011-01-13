@@ -65,7 +65,7 @@ to the familiar gray mesh and the cursor to the hollow x shape.)
 This lets you change the pointer cursor to whatever
 you want when the pointer cursor is outside of any window.
 Cursor and mask files are bitmaps (little pictures), and can be made with the
-.I bitmap(1)
+.I bitmap(__appmansuffix__)
 program.  You probably want the mask file to be all black until you
 get used to the way masks work.
 .IP "\fB-cursor_name\fP \fIcursorname\fP
@@ -78,7 +78,7 @@ as defined by libXcursor, at the specified size.
 .IP "\fB-bitmap\fP \fIfilename\fP"
 Use the bitmap specified in the file to set the window pattern.  You can
 make your own bitmap files (little pictures) using the
-.I bitmap(1)
+.I bitmap(__appmansuffix__)
 program.  The entire background will be made up of repeated "tiles" of
 the bitmap.
 .IP "\fB-mod\fP \fIx\fP \fIy\fP"
@@ -108,6 +108,6 @@ This option is unused since you can't iconify the background.
 .IP "\fB-display\fP \fIdisplay\fP"
 Specifies the server to connect to; see \fIX(__miscmansuffix__)\fP.
 .SH "SEE ALSO"
-X(__miscmansuffix__), xset(1), xrdb(1), Xcursor(__libmansuffix__)
+X(__miscmansuffix__), xset(__appmansuffix__), xrdb(__appmansuffix__), Xcursor(__libmansuffix__)
 .SH AUTHOR
 Mark Lillibridge, MIT Project Athena
