@@ -32,6 +32,10 @@ in this Software without prior written authorization from The Open Group.
  *		11-Jun-87
  */
 
+#ifdef HAVE_CONFIG_H
+# include "config.h"
+#endif
+
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xatom.h>
@@ -75,7 +79,6 @@ usage(void)
             "  -fg <color>   or   -foreground <color>\n"
             "  -bg <color>   or   -background <color>\n"
             "  -rv   or   -reverse\n"
-            "  -help\n"
             "  -def   or   -default\n"
             "  -name <string>\n"
             "  -cursor <cursor file> <mask file>\n"
@@ -85,6 +88,8 @@ usage(void)
             "  -gray   or   -grey\n"
             "  -bitmap <filename>\n"
             "  -mod <x> <y>\n"
+            "  -help\n"
+            "  -version\n"
             );
     exit(1);
     /*NOTREACHED*/
@@ -124,6 +129,10 @@ main(int argc, char *argv[])
 	}
 	if (!strcmp("-help", argv[i])) {
 	    usage();
+	}
+	if (!strcmp("-version", argv[i])) {
+            printf("%s\n", PACKAGE_STRING);
+            exit(0);
 	}
 	if (!strcmp("-def", argv[i]) || !strcmp("-default", argv[i])) {
 	    restore_defaults = 1;

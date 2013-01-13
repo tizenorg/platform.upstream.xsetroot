@@ -27,7 +27,7 @@
 xsetroot \- root window parameter setting utility for X
 .SH SYNOPSIS
 .B xsetroot
-[-help] [-def] [-display \fIdisplay\fP]
+[-help] [-version] [-def] [-display \fIdisplay\fP]
 [-cursor \fIcursorfile maskfile\fP]
 [-cursor_name \fIcursorname\fP]
 [-xcf \fIcursorfile\fP \fIcursorsize\fP]
@@ -58,6 +58,8 @@ Only one of the background color/tiling changing options
 The various options are as follows:
 .IP \fB-help\fP
 Print a usage message and exit.
+.IP \fB-verson\fP
+Print a version message and exit.
 .IP \fB-def\fP
 Reset unspecified attributes to the default values.  (Restores the background
 to the familiar gray mesh and the cursor to the hollow x shape.)
