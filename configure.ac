@@ -39,7 +39,7 @@ XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
 
 # Checks for pkg-config packages
-PKG_CHECK_MODULES(XSETROOT, xmuu x11 xbitmaps xcursor)
+PKG_CHECK_MODULES(XSETROOT, [xmuu x11 xbitmaps xcursor xproto >= 7.0.17])
 
 XORG_WITH_LINT
 

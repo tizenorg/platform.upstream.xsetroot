@@ -55,7 +55,7 @@ static int save_colors = 0;
 static int unsave_past = 0;
 static Pixmap save_pixmap = (Pixmap)None;
 
-static void usage(void);
+static void usage(void) _X_NORETURN;
 static void FixupState(void);
 static void SetBackgroundToBitmap(Pixmap bitmap, 
 				  unsigned int width, unsigned int height);
