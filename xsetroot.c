@@ -69,22 +69,23 @@ static Pixmap ReadBitmapFile(char *filename, unsigned int *width, unsigned int *
 static void
 usage(void)
 {
-    fprintf(stderr, "usage: %s [options]\n", program_name);
-    fprintf(stderr, "  where options are:\n");
-    fprintf(stderr, "  -display <display>   or   -d <display>\n");
-    fprintf(stderr, "  -fg <color>   or   -foreground <color>\n");
-    fprintf(stderr, "  -bg <color>   or   -background <color>\n");
-    fprintf(stderr, "  -rv   or   -reverse\n");
-    fprintf(stderr, "  -help\n");
-    fprintf(stderr, "  -def   or   -default\n");
-    fprintf(stderr, "  -name <string>\n");
-    fprintf(stderr, "  -cursor <cursor file> <mask file>\n");
-    fprintf(stderr, "  -cursor_name <cursor-font name>\n");
-    fprintf(stderr, "  -xcf <ARGB cursor file> <cursor size>\n");
-    fprintf(stderr, "  -solid <color>\n");
-    fprintf(stderr, "  -gray   or   -grey\n");
-    fprintf(stderr, "  -bitmap <filename>\n");
-    fprintf(stderr, "  -mod <x> <y>\n");
+    fprintf(stderr, "usage: %s [options]\n%s\n", program_name,
+            "  where options are:\n"
+            "  -display <display>   or   -d <display>\n"
+            "  -fg <color>   or   -foreground <color>\n"
+            "  -bg <color>   or   -background <color>\n"
+            "  -rv   or   -reverse\n"
+            "  -help\n"
+            "  -def   or   -default\n"
+            "  -name <string>\n"
+            "  -cursor <cursor file> <mask file>\n"
+            "  -cursor_name <cursor-font name>\n"
+            "  -xcf <ARGB cursor file> <cursor size>\n"
+            "  -solid <color>\n"
+            "  -gray   or   -grey\n"
+            "  -bitmap <filename>\n"
+            "  -mod <x> <y>\n"
+            );
     exit(1);
     /*NOTREACHED*/
 }
