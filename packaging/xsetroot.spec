@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           xsetroot
 Version:        1.1.0
 Release:        0
@@ -14,6 +16,10 @@ BuildRequires:  pkgconfig(xcursor)
 BuildRequires:  pkgconfig(xmuu)
 BuildRequires:  pkgconfig(xorg-macros) >= 1.8
 # This was part of the xorg-x11 package up to version 7.6
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 The xsetroot program allows you to tailor the appearance of the
