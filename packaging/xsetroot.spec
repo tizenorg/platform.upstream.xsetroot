@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           xsetroot
-Version:        1.1.0
+Version:        1.1.1
 Release:        0
 License:        MIT
 Summary:        Utility to set X root window parameter
@@ -30,7 +30,7 @@ background ("root") window on a workstation display running X.
 cp %{SOURCE1001} .
 
 %build
-%configure
+%autogen
 make %{?_smp_mflags}
 
 %install
